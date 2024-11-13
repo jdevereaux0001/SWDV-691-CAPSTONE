@@ -76,7 +76,7 @@ div#header {
 
 
 h1 { 
-	color:rgb(179, 115, 32);
+	color:rgb(49, 192, 61);
 	font-size:3em;
 	font-family: Amasis MT Pro Black, Aptos;
 	font-weight: bold;
@@ -93,6 +93,12 @@ h2 {
 h3 { 
 	color: brown;
 	font-size:2em;
+	text-align:center;
+	font-family: Georgia, serif;
+}
+h4 { 
+	color: #627aca;
+	font-size:1.5em;
 	text-align:center;
 	font-family: Georgia, serif;
 }
@@ -236,5 +242,11 @@ a.garden {
 }
 body {
 	max-width: 1100px;
+}
+p {
+	text-indent: 320px;
+}
+form.checkbox {
+	text-indent: 320px;
 }
 }

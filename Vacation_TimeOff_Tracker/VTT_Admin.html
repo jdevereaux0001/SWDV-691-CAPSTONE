@@ -2,84 +2,23 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
-    <title>Blazing Trails</title>
-    <link rel="stylesheet" href="Side_by_Side.css"/>
+    <title>Admin</title>
+    <link rel="stylesheet" href="VTT.css"/>
     <script type="text/javascript" src="mustache.js"></script>
 </head>
 <body>
-<h1 role="heading" aria-level="1">Blazing Trails Side-by-Side Club</h1>
-<h2 role="heading" aria-level="2">Contact Us</h2>
-<section align="center">
-    <body onload="renderHello()">
-        <div id="target">Loading...</div>
-        <script id="template" type="x-tmpl-mustache">
-          <h2>Hello {{ name }}, please provide your feedback to the Club below:</h2
-        </script>
-        <script src="https://unpkg.com/mustache@latest"></script>
-        <script src="render.js"></script>
-    </body>
-<hr>
-<p align="center">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
+<h1 role="heading" aria-level="1">Administration</h1>
+<p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
 <form name="ContactUs" method="post" action="contactus.php">
-    <h4 role="heading" aria-level="4">Existing Members - enter your userame below:</h4>
+    <h4 role="heading" aria-level="4">Enter the new admin ID below:</h4>
     <p>
-    <label for="Username">Username: </label>
+    <label for="Username">Admin ID: </label>
     <strong><abbr title="required">*</abbr></strong>
-    <input type="text" name="txtUsername" id="txtUsername" value="" maxlength="10" onkeypress="return blockSpecialChars(event)">
-    </p>
-    <hr>
-    <h4 role="heading" aria-level="4">Non-Members - tell us about yourself:</h4>
-    <p>
-        <label for="firstName">First Name: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtFirstName" id="txtFirstName" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
+    <input type="number" name="txtAdminID" id="txtAdminID" value="" maxlength="10" onkeypress="return blockSpecialChars(event)">
     </p>
     <p>
-        <label for="lastName">Last Name: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtLastName" id="txtLastName" value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <label for="primaryPhone">Primary Phone: </label>
-        <input type="text" name="txtPrimaryPhone" id="txtPrimaryPhone" onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <label for="primaryEmail">Email: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtPrimaryEmail" id="txtPrimaryEmail" maxlength="40">
-    </p>
-    <hr>
-    <h4 role="heading" aria-level="4">What would you like to share?</h4>
-    <p>
-        <label for="commentBox">Comments: </label>
-        <textarea id="txtCommentBox" name="txtCommentBox" rows="5" cols="33"></textarea>
-    </p>
-    <p>
-        <legend>I wish to be contacted about my feedback:</legend>
-        <div>
-            <input type="radio" id="txtContectMe" name="txtContectMe" value="Yes"/>
-            <label for="Yes">Yes please</label>
-        </div>
-        <div>
-            <input type="radio" id="txtContectMe" name="txtContectMe" value="No"/>
-            <label for="No">No thanks</label>
-        </div>
-    </p>
-    <p>
-        <legend>Contact me via:</legend>
-        <div>
-            <input type="radio" id="txtContectVia" name="txtContectVia" value="Email"/>
-            <label for="email">Email</label>
-        </div>
-        <div>
-             <input type="radio" id="txtContectVia" name="txtContectVia" value="phone" />
-            <label for="phone">Phone</label>
-        </div>
-    </p>
-    <p>&nbsp;</p>
-    <p>
-    <input type="submit" class="button button3" name="Submit Feedback" id="Submit" value="Submit Feedback">
-    <input type="reset" class="button button3" name="ResetFOrm" id="ResetForm" value="Reset Form">
+        <input type="submit" class="button button1" name="Register" id="Submit" value="Register">
+        <input type="reset" class="button button1" name="ResetFOrm" id="ResetForm" value="Reset Form">
     </p>
 </form>
 </body>

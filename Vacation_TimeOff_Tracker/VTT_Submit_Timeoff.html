@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Submit TimeOff</title>
+    <link rel="stylesheet" href="VTT.css"/>
+    
+    </script>
+</head>
+<body>
+<h1 role="heading" aria-level="1">Submit TimeOff</h1>
+<section align="left">
+<p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
+<form name="myAccount" method="post" action="createaccount.php">
+    <h4 role="heading" aria-level="4">TimeOff Request Details:</h4>
+    <p>
+        <label for="studentID">Student ID: </label>
+        <strong><abbr title="required">*</abbr></strong>
+        <input type="number" name="txtStudentID" id="txtStudentID" value="" maxlength="7" onkeypress="return valid_numbers(event)">
+    </p>
+    <p>
+        <label for="timeoffDate">Date Requested: </label> 
+        <strong><abbr title="required">*</abbr></strong>
+        <input type="date" name="txtTimeoffDate" id="txtTimeoffDate" value="" maxlength="20">
+    </p>
+    <p>
+        <label for="duration">Full Day </label>
+        <strong><abbr title="required">*</abbr></strong>
+        <input type="radio" name="txtDuration" id="txtDuration" value="" maxlength="20">
+    </p>
+    <p>
+        <label for="reasonCd">Reason Code: </label>
+        <strong><abbr title="required">*</abbr></strong>
+        <input type="text" name="txtReasonCD" id="txtReasonCD" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
+    </p>
+    <p>
+        <label for="comments">Comments: </label>
+        <strong><abbr title="required">*</abbr></strong>
+        <input type="text" name="txtComments" id="txtComments" value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
+    </p>
+    <p>
+        <input type="submit" class="button button1" name="Submit" id="Submit" value="Submit">
+        <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
+    </p>
+</form>
+</body>
+<hr>
+  <br>
+    <footer align="center">
+      <td nowrap align="center">
+        <a href="VTT_Home_Page.html" role="link">Home</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Student_Account.html" role="link">Student Account</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Manager_Account.html" role="link">Manager Account</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Student_Trips.html" role="link">Student Trips</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Student_Blogs.html" role="link">Student Blogs</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Admin.html" role="link">Admin</a>
+      </td>
+   </footer>
+   <br>
+</html>

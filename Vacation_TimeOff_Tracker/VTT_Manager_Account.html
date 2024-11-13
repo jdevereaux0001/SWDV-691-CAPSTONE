@@ -2,8 +2,8 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
-    <title>User Info Form</title>
-    <link rel="stylesheet" href="property_mgmt.css"/>
+    <title>Manager Account</title>
+    <link rel="stylesheet" href="VTT.css"/>
     <script type="text/javascript">
         function blockSpecialChars(event)
         {
@@ -17,22 +17,25 @@
     </script>
 </head>
 <body>
-<h1>Complete Property Management, LLC</h1>
-<section align="center">
-<h2>Becoming a new user is <i>EASY</i>...</h2>
-<hr>
-<p align="center">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
+<h1>Manager Account</h1>
+<section align="left">
+<p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
 <form name="homeUser" method="post" action="homeuser.php">
-    <h4>Please provide the credentials you will use to signon:</h4>
+    <h4>Please provide your Manager credentials:</h4>
     <p>
-    <label for="Userid">Userid: </label>
+    <label for="managerID">ManagerID: </label>
     <strong><abbr title="required">*</abbr></strong>
-    <input type="text" name="txtUserID" id="txtUserID" value="" maxlength="10" onkeypress="return blockSpecialChars(event)">
+    <input type="number" name="txtUserID" id="txtUserID" value="" maxlength="7" onkeypress="return blockSpecialChars(event)">
     </p>
     <p>
         <label for="password">Password: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtPassword" id="txtPassword" value="" maxlength="12"  onkeypress="return blockSpecialChars(event)">
+        <input type="text" name="txtPassword" id="txtPassword" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
+    </p>
+    <p>
+        <label for="rePassword">Re-enter Password: </label>
+        <strong><abbr title="required">*</abbr></strong>
+        <input type="text" name="txtRePassword" id="txtRePassword" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
     </p>
     <h4>Tell us about yourself:</h4>
     <p>
@@ -46,42 +49,13 @@
         <input type="text" name="txtLastName" id="txtLastName" value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
     </p>
     <p>
-        <label for="primaryPhone">Primary Phone: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtPrimaryPhone" id="txtPrimaryPhone" onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <label for="altPhone">Alternate Phone: </label>
-        <input type="text" name="txtAltPhone" id="txtAltPhone" maxlength="10" onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
         <label for="primaryEmail">Email: </label>
         <strong><abbr title="required">*</abbr></strong>
         <input type="text" name="txtPrimaryEmail" id="txtPrimaryEmail" maxlength="40">
     </p>
-    <h4>In the event of an emergency and we cannot reach you, who can we contact?</h4>
     <p>
-        <label for="emergencyContactName">Contact Name: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtEmergencyContactName" id="txtEmergencyContactName" maxlength="40" onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <label for="emergencyPhone">Contact Phone: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtEmergencyPhone" id="txtEmergencyPhone" maxlength="10" onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <label for="emergencyEmail">Email: </label>
-        <input type="text" name="txtEmergencyEmail" id="txtEmergencyEmail" maxlength="40">
-    </p>
-    <p>
-        <label for="mailingList">Signup for our Mailing List: </label>
-        <input type="checkbox" name="txtMailingList" id="txtMailingList">
-    </p>
-    <p>&nbsp;</p>
-    <p>
-    <input type="submit" class="button" name="Signup" id="Submit" value="Sign Me Up">
-    <input type="reset" class="button" name="ClearForm" id="ClearForm" value="Clear Form">
+        <input type="submit" class="button button1" name="Register" id="Submit" value="Register">
+        <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
     </p>
 </form>
 </body>
