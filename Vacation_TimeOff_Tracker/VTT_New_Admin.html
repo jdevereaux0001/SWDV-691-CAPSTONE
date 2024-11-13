@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>New Admin</title>
+    <link rel="stylesheet" href="VTT.css"/>
+    <script type="text/javascript" src="mustache.js"></script>
+</head>
+<body>
+<h1 role="heading" aria-level="1">New Admin</h1>
+<p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
+<form name="newAdmin" method="post" action="contactus.php">
+    <h4 role="heading" aria-level="4">Enter the new admin ID below:</h4>
+    <p>
+    <label for="adminID">Admin ID: </label>
+    <strong><abbr title="required">*</abbr></strong>
+    <input type="number" name="txtAdminID" id="txtAdminID" value="" maxlength="7" onkeypress="return isNumberKey(event)">
+    </p>
+    <p>
+        <input type="submit" class="button button1" name="Create" id="Submit" value="Create">
+        <input type="reset" class="button button1" name="ResetFOrm" id="ResetForm" value="Reset Form">
+    </p>
+</form>
+</body>
+<hr>
+  <br>
+    <footer align="center">
+      <td nowrap align="center">
+        <a href="VTT_Home_Page.html" role="link">Home</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Student_Account.html" role="link">Student Account</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Manager_Account.html" role="link">Manager Account</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Student_Trips.html" role="link">Student Trips</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Student_Blogs.html" role="link">Student Blogs</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Admin.html" role="link">Admin</a>
+      </td>
+   </footer>
+   <br>
+</html>

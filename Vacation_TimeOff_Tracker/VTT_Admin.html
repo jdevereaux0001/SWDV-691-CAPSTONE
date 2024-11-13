@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Admin</title>
     <link rel="stylesheet" href="VTT.css"/>
-    <script type="text/javascript" src="mustache.js"></script>
-</head>
-<body>
-<h1 role="heading" aria-level="1">Administration</h1>
-<p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
-<form name="ContactUs" method="post" action="contactus.php">
-    <h4 role="heading" aria-level="4">Enter the new admin ID below:</h4>
-    <p>
-    <label for="Username">Admin ID: </label>
-    <strong><abbr title="required">*</abbr></strong>
-    <input type="number" name="txtAdminID" id="txtAdminID" value="" maxlength="10" onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <input type="submit" class="button button1" name="Register" id="Submit" value="Register">
-        <input type="reset" class="button button1" name="ResetFOrm" id="ResetForm" value="Reset Form">
-    </p>
-</form>
-</body>
-<hr>
+  </head>
+  <body>
+    <header>
+      <h1 role="heading" aria-level="1">Administration
+    </header>
+    <main>
+    <p align="left"> "A list of all Admins will be populated here from the public.admin table."</p>
+    <br>
+    <body align="center">
+        <a href="VTT_New_Admin.html" role="button"><button class="button button1">Create New Admin</button></a>
+        <br>
+    </body>
+    <br>
+  </main>
+  <hr>
   <br>
     <footer align="center">
       <td nowrap align="center">
