@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Week 4 - Practice Exercises</title>"
+    <link rel="stylesheet" href="theme.css"/>
+    <script type="text/javascript">
+    //  This javascript validates the credentials that are supplied into the form.
+    //  Please test by clicking the Submit button without any fields populated to preview how the
+    //  alert prompting works.  Input username and click Submit, then password, then email.
+        function validateCreds(a,b,c)
+        {
+            if (a.length==0)
+            {
+                alert("Please enter a valid username.");
+            }
+            else if (b.length==0)
+            {
+                alert("Please enter a valid password.");
+            }
+            else if (c.length==0)
+            {
+                alert("Please enter a valid email.");
+            }
+            else alert("You will receive an e-mail with password change instructions if your credentials are on file")
+        }
+    </script>
+  </head>
+    <form method="post" action="" align="center" name="objForm" >
+        <h2>Password Reset Form</h2>
+        <p align="center">(Required fields are noted with <strong><abbr title="required">*)</abbr></strong></p>
+        <section align="center">
+            <h3>Enter Your Credentials</h3>
+            <p>
+                <label for="username">
+                    <span>Username: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="username" id="username" name="username" required="required" >
+            </p>
+            <p>
+                <label for="password">
+                    <span>Password: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="password" id="password" name="password" required="required" >
+            </p>
+            <p>
+                <label for="email">
+                    <span>Email: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="email" id="email" name="email" required="required" >
+            </p>
+            <p>
+                <label for="comments">
+                    <span>Comments: </span>
+                </label>
+                <textarea name="comments" id="comments" rows="3" cols="30"></textarea>
+            </p>
+            <p>
+                <input type="submit" class="formButton" value="Submit" onclick="validateCreds(objForm.username.value, objForm.password.value, objForm.email.value)" />
+                <input type="reset" class="formButton" value="Clear Form">
+            </p>
+        </section>
+    </form>
+  </body>
+</html>

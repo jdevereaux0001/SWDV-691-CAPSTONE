@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<title>JavaScript</title>
+	<head></head>
+	
+	<body onload="myFunction()">
+		<ul id="target"></ul>
+		
+		<script>
+			function myFunction(){
+				var myValues = ["orange", "yellow", "red"];
+				var target = document.getElementById("target");
+				
+				for(var i = 0; i < myValues.length; i++){
+					console.log(myValues[i]);
+					
+					var node = document.createElement("li");
+					var textnode = document.createTextNode(myValues[i]);
+					
+					node.appendChild(textnode);
+					
+					target.appendChild(node);
+				}
+			}
+		
+		</script>
+	
+	</body>
+
+</html>

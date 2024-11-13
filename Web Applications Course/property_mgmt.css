@@ -1,0 +1,40 @@
+/* CSS Document */
+h1 { 
+	color:blue;
+	font-size:3em;
+	text-align:center;
+}
+h2 { 
+	color:green;
+	font-size:2em;
+	text-align:center;
+}
+a { 
+	color:blue;
+}
+#footer {
+	text-align:center;
+}
+th {
+	align-items:center;
+	background-color:azure;
+}
+td {
+	color:black;
+	width:50px;
+}
+.button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+strong {
+	color:red;
+}

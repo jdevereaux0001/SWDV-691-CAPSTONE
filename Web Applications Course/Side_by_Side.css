@@ -1,0 +1,240 @@
+/* CSS Document */ 
+
+/* The following code is LESS pre-compiler followed by the CSS compiled code */
+/* This code was put through winless.org                                     */
+// Declaring variables
+@border-width: 1px;
+@red: #842210;
+
+/* This is an example of using @ variables in LESS                           */
+div#header 
+{
+    border: @border-width solid @red;
+  
+  	@link-color:        blue;
+	@link-color-hover:  darken(@link-color, 10%);
+  	@background-color:  rgb(185, 252, 155); //beige
+
+/* This is an example of using nesting for links and hovers colors           */
+	a,
+	.link {
+  		color: @link-color;
+	
+		a:hover {
+  			color: @link-color-hover;
+		}
+  	}
+  	.list-background-color
+  	{
+    	color: rgb(185, 252, 155);  // beige
+  	}
+  	.item-font-color
+  	{
+    	color: black
+  	}
+	/* This is an example of using Mixins for .list-background-color();     */
+	/* and .item-font-color();                                              */                                          
+	th {
+		align-items:center;
+		.list-background-color();
+	}
+	td 
+  	{
+		.item-font-color();
+		width:50px;
+	}
+} 
+/* This is the end of LESS pre-compiler code */
+
+/* This is the output of LESS pre-compiler code in CSS format */
+div#header {
+	border: 1px solid #842210;
+  }
+  div#header a,
+  div#header .link {
+	color: #0000ff;
+  }
+  div#header a a:hover,
+  div#header .link a:hover {
+	color: #0000cc;
+  }
+  div#header .list-background-color {
+	color: #b9fc9b;
+  }
+  div#header .item-font-color {
+	color: #000000;
+  }
+  div#header th {
+	align-items: center;
+	color: #b9fc9b;
+  }
+  div#header td {
+	color: #000000;
+	width: 50px;
+  }
+  /* This is the end of CSS output */
+
+
+h1 { 
+	color:rgb(179, 115, 32);
+	font-size:3em;
+	font-family: Georgia, serif;
+	font-weight: bold;
+	font-style: oblique;
+	text-align:left;
+	text-shadow: 2px 2px rgb(146, 124, 124);
+}
+h2 { 
+	color:rgb(2, 0, 0);
+	font-size:2em;
+	text-align:center;
+	font-family: Georgia, serif;
+}
+h3 { 
+	color: brown;
+	font-size:2em;
+	text-align:center;
+	font-family: Georgia, serif;
+}
+a { 
+	color:blue;
+	font-size: 20px;
+}
+#footer {
+	text-align:center;
+}
+th {
+	align-items:center;
+	background-color:rgb(185, 252, 155);
+	font-size: 20px;
+}
+td {
+	color:black;
+	width:50px;
+}
+.button1 {
+	background-color: rgb(243, 252, 125); 
+	border: black;
+	color: rgb(5, 1, 1);
+	padding: 30px 45px;
+	text-align: center;
+	font-family: Georgia, serif;
+	text-decoration: none;
+	display: ruby-base-container;
+	font-size: 25px;
+	margin: 8px 4px;
+	border-radius: 20px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+}
+.button1:hover {
+	background-color: white;
+	color: black;
+	border: 6px solid rgb(243, 252, 125);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button2 {
+	background-color: rgb(172, 200, 252); 
+	border: black;
+	color: rgb(5, 1, 1);
+	padding: 30px 45px;
+	text-align: center;
+	font-family: Georgia, serif;
+	text-decoration: none;
+	display: ruby-base-container;
+	font-size: 30px;
+	margin: 20px 10px;
+	border-radius: 20px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+}
+.button2:hover {
+	background-color: white;
+	color: black;
+	border: 8px solid rgb(172, 200, 252);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button3 {
+	background-color: rgb(243, 252, 125); 
+	border: black;
+	color: rgb(5, 1, 1);
+	padding: 20px 35px;
+	text-align: center;
+	font-family: Georgia, serif;
+	text-decoration: none;
+	display: ruby-base-container;
+	font-size: 25px;
+	margin: 8px 4px;
+	border-radius: 20px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+}
+.button3:hover {
+	background-color: white;
+	color: black;
+	border: 6px solid rgb(243, 252, 125);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+strong {
+	color:red;
+}
+success {
+	color:green;
+}
+warning {
+	color:yellow;
+}
+div#mediaQueryMessage {
+	display: none;
+}
+section {
+	border: 1px solid #000;
+}
+section.text {
+	float: left;
+	width: 300px;
+}
+section.largeImage {
+	float: left;
+	width: 460px;
+}
+section.littleImages {
+	float: left;
+	width: 140px;
+}
+section.littleImages img {
+	border: 1px solid red;
+	height: 40px;
+	width: 40px;
+}
+a.garden {
+	margin: 20px 0 0 14.28%;
+}
+
+@media all and (min-width: 800px) {
+div#mediaQueryMessage {
+	display: block;
+}
+section.text {
+	float: left;
+	margin: 20px 0 20px 2.02%;
+	width: 30.61%;
+}
+section.largeImage {
+	float: left;
+	margin: 20px 0 20px 2.02%;
+	width: 46.93%;
+}
+section.littleImages {
+	float: left;
+	margin: 20px 0 20px 2.02%;
+	width: 14.28%
+}
+a.garden {
+	margin: 20px 0 0 14.28%;
+	width: 28.57%;
+}
+body {
+	max-width: 1100px;
+}
+}

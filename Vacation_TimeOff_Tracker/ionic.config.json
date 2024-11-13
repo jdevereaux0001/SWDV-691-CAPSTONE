@@ -1,7 +1,0 @@
-{
-  "name": "RoomTracker",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

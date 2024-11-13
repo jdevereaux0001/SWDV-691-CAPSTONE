@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <script language="Javascript" type="text/javascript">
+    //  This function will calculate the total cost of merch for a client
+        function calcTotalPrice(unitPrice, quantity, zipCodeShipping)
+        {
+            //  Sales tax is static since I am selling from my state
+            salesTax = 0.1025
+            totalPrice = unitPrice * quantity * salesTax + zipCodeShipping
+        }
+    </script>
+  </head>
+  <body>
+    <form action="" name="enterCredsForm">
+        <h2>Credentials Inquiry Form</h2>
+        <p align="center">(Required fields are noted with <strong><abbr title="required">*)</abbr></strong></p>
+        <section align="center">
+            <h3>Enter Your Credentials</h3>
+            <p>
+                <label for="username">
+                    <span>Username: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="text" name="username">
+            </p>
+            <p>
+                <label for="password">
+                    <span>Password: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="text" name="password">
+            </p>
+            <p>
+                <label for="comments">
+                    <span>Comments: </span>
+                </label>
+                <textarea name="Comments" id="Comments" rows="3" cols="30"></textarea>
+            </p>
+            <p>
+                <input type="submit" class="formButton" value="Submit">
+                <input type="reset" class="formButton" value="Clear Form">
+            </p>
+        </section>
+    </form>
+  </body>
+</html>

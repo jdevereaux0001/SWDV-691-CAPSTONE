@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Week 2 - Practice Exercises</title>
+    <link rel="stylesheet" href="table_theme.css"/>
+  </head>
+  <body>
+    <table border="10" width=500px cellpadding="10" cellspacing="10">
+        <tr>
+            <th colspan="4"><h2>Jason's Favorite Book</h2></th>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Links to Purchase</th>
+        </tr>
+        <tr align="center">
+            <td><img src="prey_book.png" alt="Prey" height="75" width="75"></td>
+            <td>Michael Crichton</td>
+            <td>2002</td>
+            <td nowrap align="left">
+                <a target="_blank" href="https://www.amazon.com">Amazon</a><br>
+                <a target="_blank" href="https://www.barnesandnoble.com">Barnes & Noble</a><br>
+                <a target="_blank" href="https://www.thriftbooks.com">ThriftBooks</a>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <hr>
+    <form method="post" action="submit.php" align="center">
+        <h2>Credentials Inquiry Form</h2>
+        <p align="center">(Required fields are noted with <strong><abbr title="required">*)</abbr></strong></p>
+        <section align="center">
+            <h3>Enter Your Credentials</h3>
+            <p>
+                <label for="username">
+                    <span>Username: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="text" name="username">
+            </p>
+            <p>
+                <label for="password">
+                    <span>Password: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="text" name="password">
+            </p>
+            <p>
+                <label for="comments">
+                    <span>Comments: </span>
+                </label>
+                <textarea name="Comments" id="Comments" rows="3" cols="30"></textarea>
+            </p>
+            <p>
+                <input type="submit" class="formButton" value="Submit">
+                <input type="reset" class="formButton" value="Clear Form">
+            </p>
+        </section>
+    </form>
+  </body>
+</html>

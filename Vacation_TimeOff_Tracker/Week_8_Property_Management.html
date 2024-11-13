@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"> 
+    <title>Property Management</title>
+    <link rel="stylesheet" href="property_mgmt.css"/>
+    
+  </head>
+  <body>
+    <script language="php">
+// database connection code
+// $conn = mysqli_connect('localhost', 'database_user', 'database_password','database');
+        $servername='localhost:8088';
+        $user = 'root';
+        $password = '1Master01';
+        $database = 'mysql'
+
+        if ($mysqli->connect_error) 
+        {
+            die('Connect Error (' .
+            $mysqli->connect_errno . ') '.
+            $mysqli->connect_error);
+        }
+
+        $sql1 = "SELECT * FROM home_info WHERE home_id = 1";
+
+        $result = $mysqli->query($sql);
+        $mysqli->close();
+
+    </script>
+    <form method="get" action="selectHomeInfo.php" align="center">
+        <h1>Complete Property Management, LLC</h1>
+        <h2>Property Management</h2>
+        <hr>
+        <section>
+            <h3>A current list of your property can be found below...</h3>
+            <table width="1300" border="0">
+                <tr>
+                    <th>Home ID</th>
+                    <th>Location</th>
+                    <th>Room</th>
+                    <th>Placement</th>
+                    <th>Material</th>
+                    <th>Brand</th>
+                    <th>Color</th>
+                    <th>Store Purchased</th>
+                    <th>Purchase Date</th>
+                    <th>Store Zipcode</th>
+                    <th>Store Website</th>
+                </tr>
+                <script language="php">
+                    while($rows=$result->fetch_assoc())
+                {
+                </script>
+                <tr>
+                    <td><script language="php"> echo $rows['home_id'];</script></td>
+                    <td><script language="php"> echo $rows['location'];</script></td>
+                    <td><script language="php"> echo $rows['room'];</script></td>
+                    <td><script language="php"> echo $rows['placement'];</script></td>
+                    <td><script language="php"> echo $rows['material'];</script></td>
+                    <td><script language="php"> echo $rows['brand'];</script></td>
+                    <td><script language="php"> echo $rows['color'];</script></td>
+                    <td><script language="php"> echo $rows['purchase_store'];</script></td>
+                    <td><script language="php"> echo $rows['purchase_date'];</script></td>
+                    <td><script language="php"> echo $rows['purchase_store_zip5'];</script></td>
+                    <td><script language="php"> echo $rows['purchase_store_website'];</script></td>
+                </tr>
+                <script language="php">
+                    }
+                </script>
+            </table>
+            <br><br>
+            <td><a href="Week_8_Enter_Property.html"><input class="button" value="Add New Record"></a></td>
+        </section>
+    </form>
+  </body>
+  <hr>
+    <footer align="center">
+      <td nowrap align="center">
+        <a href="Week_8_Home_Page.html">Home</a>&nbsp;&nbsp;&nbsp;
+        <a href="Week_8_Why_We_Care.html">Why We Care</a>&nbsp;&nbsp;&nbsp;
+        <a href="Week_8_My_Account.html">My Account</a>&nbsp;&nbsp;&nbsp;
+        <a href="Week_8_Contact_Us.html">Contact Us</a>
+      </td>
+   </footer>
+</html>
