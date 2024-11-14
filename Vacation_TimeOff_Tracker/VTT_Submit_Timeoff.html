@@ -24,19 +24,24 @@
         <input type="date" name="txtTimeoffDate" id="txtTimeoffDate" value="" maxlength="20">
     </p>
     <p>
-        <label for="duration">Full Day </label>
+        <label for="reasonCd">Duration: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="radio" name="txtDuration" id="txtDuration" value="" maxlength="20">
+        <input type="radio" id="duration" name="duration">Full Day
+        <input type="radio" id="duration" name="duration">Half Day
     </p>
     <p>
-        <label for="reasonCd">Reason Code: </label>
+        <label for="reasonCd">Timeoff Reason:</label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtReasonCD" id="txtReasonCD" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
+            <select name="reasonCd" id="reasonCd">
+            <option value="vacation">Vacation</option>
+            <option value="sick">Sick</option>
+            <option value="personal">Personal</option>
+            </select>
     </p>
     <p>
-        <label for="comments">Comments: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtComments" id="txtComments" value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="3" cols="40">
+        </textarea>
     </p>
     <p>
         <input type="submit" class="button button1" name="Submit" id="Submit" value="Submit">

@@ -11,22 +11,12 @@
 <h1 role="heading" aria-level="1">New Student Registration</h1>
 <section align="left">
 <p align="center">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
-<form name="myAccount" method="post" action="createaccount.php">
+<form name="StudentAccount" method="post" action="createStudent.php">
     <h4 role="heading" aria-level="4">Please enter your student credentials:</h4>
     <p>
     <label for="studentID">Student ID: </label>
     <strong><abbr title="required">*</abbr></strong>
     <input type="text" name="txtStudentID" id="txtStudentID" value="" maxlength="7" onkeypress="return valid_numbers(event)">
-    </p>
-    <p>
-        <label for="password">Password: </label> 
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtPassword" id="txtPassword" value="" maxlength="20">
-    </p>
-    <p>
-        <label for="password">Re-enter Password: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtRePassword" id="txtRePassword" value="" maxlength="20">
     </p>
     <h4 role="heading" aria-level="4">Tell us about yourself:</h4>
     <p>
@@ -58,24 +48,24 @@
     </p>
     <h4 role="heading" aria-level="4">What are your interests:</h4>
     <form action="">
-        <input type="checkbox" id="intTravel" name="intTravel" value="intTravel">
+        <input type="checkbox" id="txtIntTravel" name="txtIntTravel" value="intTravel">
         <label for="intTravel">International Travel</label><br>
-        <input type="checkbox" id="domTravel" name="domTravel" value="domTravel">
+        <input type="checkbox" id="txtDomTravel" name="txtDomTravel" value="domTravel">
         <label for="domTravel">Domestic Travel</label><br>
-        <input type="checkbox" id="resorts" name="resorts" value="resorts">
+        <input type="checkbox" id="txtResorts" name="txtResorts" value="resorts">
         <label for="resorts">Resorts</label><br>
-        <input type="checkbox" id="beach" name="beach" value="beach">
+        <input type="checkbox" id="txtBeach" name="txtBeach" value="beach">
         <label for="beach">Beach</label><br>
-        <input type="checkbox" id="gaming" name="gaming" value="gaming">
+        <input type="checkbox" id="txtGaming" name="txtGaming" value="gaming">
         <label for="gaming">Gaming</label><br>
-        <input type="checkbox" id="reading" name="reading" value="reading">
+        <input type="checkbox" id="txtReading" name="txtReading" value="reading">
         <label for="reading">Reading</label><br>
-        <input type="checkbox" id="roughingIt" name="roughingIt" value="roughingIt">
+        <input type="checkbox" id="txtRoughingIt" name="txtRoughingIt" value="roughingIt">
         <label for="roughingIt">Roughing It</label><br>
-        <input type="checkbox" id="fishing" name="fishing" value="fishing">
+        <input type="checkbox" id="txtFishing" name="txtFishing" value="fishing">
         <label for="fishing">Fishing</label><br>
-        <input type="checkbox" id="NA" name="NA" value="NA">
-        <label for="vehicle3">N/A; opt out</label>
+        <input type="checkbox" id="txtOptIn" name="txtOptIn" value="NA">
+        <label for="OptIn">N/A; opt out</label>
     </form>
     <p>
         <input type="submit" class="button button1" name="Register" id="Submit" value="Register">

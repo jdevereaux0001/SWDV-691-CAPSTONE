@@ -20,22 +20,12 @@
 <h1>Manager Account</h1>
 <section align="left">
 <p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
-<form name="homeUser" method="post" action="homeuser.php">
+<form name="homeUser" method="post" action="createManager.php">
     <h4>Please provide your Manager credentials:</h4>
     <p>
     <label for="managerID">ManagerID: </label>
     <strong><abbr title="required">*</abbr></strong>
     <input type="number" name="txtUserID" id="txtUserID" value="" maxlength="7" onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <label for="password">Password: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtPassword" id="txtPassword" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <label for="rePassword">Re-enter Password: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtRePassword" id="txtRePassword" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
     </p>
     <h4>Tell us about yourself:</h4>
     <p>
@@ -49,9 +39,9 @@
         <input type="text" name="txtLastName" id="txtLastName" value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
     </p>
     <p>
-        <label for="primaryEmail">Email: </label>
+        <label for="Email">Email: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtPrimaryEmail" id="txtPrimaryEmail" maxlength="40">
+        <input type="text" name="txtEmail" id="txtEmail" maxlength="40">
     </p>
     <p>
         <input type="submit" class="button button1" name="Register" id="Submit" value="Register">

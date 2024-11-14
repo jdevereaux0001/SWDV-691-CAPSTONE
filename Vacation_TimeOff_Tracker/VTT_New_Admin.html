@@ -4,17 +4,16 @@
     <meta charset="utf-8">
     <title>New Admin</title>
     <link rel="stylesheet" href="VTT.css"/>
-    <script type="text/javascript" src="mustache.js"></script>
 </head>
 <body>
 <h1 role="heading" aria-level="1">New Admin</h1>
 <p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
-<form name="newAdmin" method="post" action="contactus.php">
+<form name="newAdmin" method="post" action="newAdmin.php">
     <h4 role="heading" aria-level="4">Enter the new admin ID below:</h4>
     <p>
     <label for="adminID">Admin ID: </label>
     <strong><abbr title="required">*</abbr></strong>
-    <input type="number" name="txtAdminID" id="txtAdminID" value="" maxlength="7" onkeypress="return isNumberKey(event)">
+    <input type="text" name="txtAdminID" id="txtAdminID" value="" maxlength="7" onkeypress="return isNumberKey(event)">
     </p>
     <p>
         <input type="submit" class="button button1" name="Create" id="Submit" value="Create">
