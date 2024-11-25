@@ -7,7 +7,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql1 = "SELECT * FROM student WHERE home_id = '$txtStudentID'";
+$sql1 = "SELECT * FROM student WHERE home_id = '$txtMaryvilleID'";
 
 	$result = mysqli_query($sql1, $conn);
     

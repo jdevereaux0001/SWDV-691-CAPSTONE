@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title> New Manager Registration</title>
+    <link rel="stylesheet" href="VTT.css"/>
+    <script type="text/javascript" src="mustache.js"></script>
+    <script type="text/javascript">
+        function blockSpecialChars(event)
+        {
+            if(!((event.keyCode >= 65) && (event.keyCode <= 90) || (event.keyCode >= 97) && (event.keyCode <= 122) || (event.keyCode >= 48) && (event.keyCode <= 57)))
+            {
+                event.returnValue = false;
+                return;
+            }
+            event.returnValue = true;
+        }
+    </script>
+</head>
+<body>
+<h1>New Manager Registration</h1>
+<section align="left">
+<p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
+<form name="homeUser" method="post" action="createManager.php">
+    <body onload="renderHello()">
+        <div id="target">Loading...</div>
+        <script id="template" type="x-tmpl-mustache">
+          <h4>Oops! We didn't find {{ ID }}. Please register for first use:</h4>
+        </script>
+    
+        <script src="https://unpkg.com/mustache@latest"></script>
+        <script src="render.js"></script>
+    </body>
+    <p>
+        <label for="firstName">First Name: </label>
+        <strong><abbr title="required">*</abbr></strong>
+        <input type="text" name="txtFirstName" id="txtFirstName" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
+    </p>
+    <p>
+        <label for="lastName">Last Name: </label>
+        <strong><abbr title="required">*</abbr></strong>
+        <input type="text" name="txtLastName" id="txtLastName" value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
+    </p>
+    <p>
+        <label for="Email">Email: </label>
+        <strong><abbr title="required">*</abbr></strong>
+        <input type="text" name="txtEmail" id="txtEmail" maxlength="40">
+    </p>
+    <p>
+        <input type="submit" class="button button1" name="Register" id="Submit" value="Register">
+        <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
+    </p>
+</form>
+</body>
+<hr>
+  <br>
+    <footer align="center">
+      <td nowrap align="center">
+        <a href="VTT_Home_Page.html" role="link">Home</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Student_Account.html" role="link">Student Account</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Manager_Account.html" role="link">Manager Account</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Student_Trips.html" role="link">Student Trips</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Student_Blogs.html" role="link">Student Blogs</a>&nbsp;&nbsp;&nbsp;
+        <a href="VTT_Admin.html" role="link">Admin</a>
+      </td>
+   </footer>
+   <br>
+</html>

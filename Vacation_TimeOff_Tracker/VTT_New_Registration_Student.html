@@ -4,7 +4,17 @@
     <meta charset="utf-8">
     <title>New Registration</title>
     <link rel="stylesheet" href="VTT.css"/>
-    
+    <script type="text/javascript" src="mustache.js"></script>
+    <script type="text/javascript">
+        function blockSpecialChars(event)
+        {
+            if(!((event.keyCode >= 65) && (event.keyCode <= 90) || (event.keyCode >= 97) && (event.keyCode <= 122) || (event.keyCode >= 48) && (event.keyCode <= 57)))
+            {
+                event.returnValue = false;
+                return;
+            }
+            event.returnValue = true;
+        }
     </script>
 </head>
 <body>
@@ -12,13 +22,15 @@
 <section align="left">
 <p align="center">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
 <form name="StudentAccount" method="post" action="createStudent.php">
-    <h4 role="heading" aria-level="4">Please enter your student credentials:</h4>
-    <p>
-    <label for="studentID">Student ID: </label>
-    <strong><abbr title="required">*</abbr></strong>
-    <input type="text" name="txtStudentID" id="txtStudentID" value="" maxlength="7" onkeypress="return valid_numbers(event)">
-    </p>
-    <h4 role="heading" aria-level="4">Tell us about yourself:</h4>
+    <body onload="renderHello()">
+        <div id="target">Loading...</div>
+        <script id="template" type="x-tmpl-mustache">
+          <h4>Oops! We didn't find {{ ID }}. Please register for first use:</h4>
+        </script>
+    
+        <script src="https://unpkg.com/mustache@latest"></script>
+        <script src="render.js"></script>
+    </body>
     <p>
         <label for="firstName">First Name: </label>
         <strong><abbr title="required">*</abbr></strong>
