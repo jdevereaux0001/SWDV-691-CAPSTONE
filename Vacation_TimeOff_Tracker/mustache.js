@@ -9,6 +9,6 @@ function blockSpecialChars(event)
 }
 function renderHello() {
     const template = document.getElementById('template').innerHTML;
-    const rendered = Mustache.render(template, { name: 'Jason' , year: "2023" , ID: "0624627"});
+    const rendered = Mustache.render(template, { name: 'Jason' , year: 'txtStartDate' , ID: 'txtMaryvilleID' });
     document.getElementById('target').innerHTML = rendered;
   }
