@@ -243,5 +243,34 @@ a.garden {
 body {
 	max-width: 1100px;
 }
+.column {
+	float: left;
+	width: 33.33%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+.pie1 {
+	width: 200px;
+	height: 200px;
+	background-image: conic-gradient(rgb(240, 215, 77) 50%, rgb(36, 153, 207) 50%);
+	border-radius: 50%
+  }
+.pie2 {
+	width: 200px;
+	height: 200px;
+	background-image: conic-gradient(rgb(240, 215, 77) 50%, rgb(36, 153, 207) 50%);
+	border-radius: 50%
+  }
+.pie3 {
+	width: 200px;
+	height: 200px;
+	background-image: conic-gradient(rgb(240, 215, 77) 50%, rgb(36, 153, 207) 50%);
+	border-radius: 50%
+  }
 
 }

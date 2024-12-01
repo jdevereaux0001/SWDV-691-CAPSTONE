@@ -2,8 +2,11 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manager Account</title>
     <link rel="stylesheet" href="VTT.css"/>
+    <script type="text/javascript" src="mustache.js"></script>
     <script type="text/javascript">
         function blockSpecialChars(event)
         {
@@ -19,30 +22,20 @@
 <body>
 <h1>Manager Account</h1>
 <section align="left">
-<p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
-<form name="homeUser" method="post" action="createManager.php">
-    <h4>Please provide your Manager credentials:</h4>
-    <p>
-    <label for="managerID">ManagerID: </label>
-    <strong><abbr title="required">*</abbr></strong>
-    <input type="number" name="txtUserID" id="txtUserID" value="" maxlength="7" onkeypress="return blockSpecialChars(event)">
-    </p>
-    <h4>Tell us about yourself:</h4>
-    <p>
-        <label for="firstName">First Name: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtFirstName" id="txtFirstName" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <label for="lastName">Last Name: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtLastName" id="txtLastName" value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
-    </p>
-    <p>
-        <label for="Email">Email: </label>
-        <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtEmail" id="txtEmail" maxlength="40">
-    </p>
+    <body onload="renderHello()">
+        <div id="target">Loading...</div>
+        <script id="template" type="x-tmpl-mustache">
+          <h2>Welcome back, {{ name }}. </h2>
+          <h4>Your timeoff requests requiring approval are below. </h4>
+        </script>
+        <script src="https://unpkg.com/mustache@latest"></script>
+        <script src="render.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+
+
+<form name="managerUser" method="post" action="">
+    
+    
     <p>
         <input type="submit" class="button button1" name="Register" id="Submit" value="Register">
         <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">

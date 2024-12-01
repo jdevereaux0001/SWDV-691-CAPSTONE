@@ -7,19 +7,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql1 = "SELECT * FROM manager WHERE studentID = '$txtMaryvilleID'";
+$sql1 = "SELECT * FROM timeoff WHERE approvalReq = 'Y'";
 
 	$result = mysqli_query($conn, $sql1);
     
     $details = mysqli_fetch_array($result);
 
-    $savedManagerID = $details["managerID"];
-    $savedFirstName = $details["firstName"];
-    $savedLastName = $details["lastName"];
-    $savedEmail = $details["email"];
+    $savedStudentID = $details["studentID"];
+    $savedTimeoffDate = $details["timeoffDate"];
+    $savedTimeoffCd = $details["timeoffCd"];
+    $savedTimeoffHrs = $details["timeoffHrs"];
 
 var_dump($details);
-
 
 $result1 = $conn->query($sql1);
 

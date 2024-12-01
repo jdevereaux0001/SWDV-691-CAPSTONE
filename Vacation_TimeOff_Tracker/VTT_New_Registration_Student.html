@@ -79,8 +79,31 @@
         <input type="checkbox" id="txtOptIn" name="txtOptIn" value="NA">
         <label for="OptIn">N/A; opt out</label>
     </form>
+    <script type="text/javascript">
+
+        function calcTimeoff() {
+            const date = txtstartDate;
+            const day = date.getDay();
+            const month = date.getMonth();
+            const year = date.getFullYear();
+            if (year < 2024) {
+                txtVacationHrs==20;
+                txtSickHrs==10;
+                txtPersonalHrs==5;
+            } else if (month < 7) {
+                txtVacationHrs==10;
+                txtSickHrs==5;
+                txtPersonalHrs==3;
+            } else {
+                txtVacationHrs==5;
+                txtSickHrs==3;
+                txtPersonalHrs==1;
+            }
+        }
+                 
+    </script>
     <p>
-        <input type="submit" class="button button1" name="Register" id="Submit" value="Register">
+        <input type="submit" class="button button1" onclick=calcTimeoff() name="Register" id="Submit" value="Register">
         <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
     </p>
 </form>
