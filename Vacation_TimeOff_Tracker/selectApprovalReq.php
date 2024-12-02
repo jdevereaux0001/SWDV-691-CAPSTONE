@@ -2,7 +2,7 @@
 // database connection code
 // $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
 
-$con = mysqli_connect('localhost', 'jdevro', '1Master01','vtt');
+$con = mysqli_connect('localhost', 'root', '1Master01','vtt');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
