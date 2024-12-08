@@ -4,35 +4,36 @@
     <meta charset="utf-8">
     <title>Submit TimeOff</title>
     <link rel="stylesheet" href="VTT.css"/>
-    
     </script>
 </head>
 <body>
 <h1 role="heading" aria-level="1">Submit TimeOff</h1>
 <section align="left">
 <p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
-<form name="myAccount" method="post" action="submittimeoff.php">
+<form name="myAccount" method="post" >
     <h4 role="heading" aria-level="4">TimeOff Request Details:</h4>
     <p>
-        <label for="studentID">Student ID: </label>
+        <label for="txtStudentID">Student ID: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="number" name="txtStudentID" id="txtStudentID" value="" maxlength="7" onkeypress="return valid_numbers(event)">
+        <input type="number" title="txtStudentID" name="txtStudentID" id="txtStudentID" value="" maxlength="7">
     </p>
     <p>
-        <label for="timeoffDate">Date Requested: </label> 
+        <label for="txtTimeoffDate">Date Requested: </label> 
         <strong><abbr title="required">*</abbr></strong>
-        <input type="date" name="txtTimeoffDate" id="txtTimeoffDate" value="" maxlength="20">
+        <input type="date" title="txtTimeoffDate" name="txtTimeoffDate" id="txtTimeoffDate" value="" maxlength="20">
     </p>
     <p>
-        <label for="reasonCd">Duration: </label>
+        <label for="txtFullDay">Duration: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="radio" id="duration" name="duration">Full Day
-        <input type="radio" id="duration" name="duration">Half Day
+        <input type="radio" title="duration" name="duration" id="txtFullDay" value="fullDay">Full Day
+        <label for="txtHalfDay"></label>
+        <input type="radio" title="duration" name="duration" id="txtHalfDay" value="halfDay">Half Day
     </p>
     <p>
-        <label for="reasonCd">Timeoff Reason:</label>
+        <label for="txtReasonCd">Timeoff Reason:</label>
         <strong><abbr title="required">*</abbr></strong>
-            <select name="reasonCd" id="reasonCd">
+            <select name="txtReasonCd" id="txtReasonCd">
+            <option value="selectType">--- Please select ---</option>
             <option value="vacation">Vacation</option>
             <option value="sick">Sick</option>
             <option value="personal">Personal</option>
@@ -44,10 +45,51 @@
         </textarea>
     </p>
     <p>
-        <input type="submit" class="button button1" name="Submit" id="Submit" value="Submit">
+        <button type="submit" class="button button1" onclick="verifyBals()">Submit</button>
         <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
     </p>
 </form>
+<script type = "text/javascript">  
+    function verifyBals()
+    {
+        var usedVacationHrs=0;
+        var usedSickHrs=0;
+        var usedPersonalHrs=0;
+        var ddl = document.getElementById("txtReasonCd");
+        var selectedValue = ddl.options[ddl.selectedIndex].value;
+        if (selectedValue == "vacation") {
+            if (document.getElementById("txtFullDay").checked) {
+                usedVacationHrs = usedVacationHrs + 1;
+                alert("Your full day vacation request exceeds your allotment. Manager approval will be required.")
+              }
+            else {
+                usedVacationHrs = usedVacationHrs + .5;
+                alert("Your half day vacation request exceeds your allotment. Manager approval will be required.")
+            }
+            
+        } else if (selectedValue == "sick") {
+            if (document.getElementById("txtFullDay").checked) {
+                usedSickHrs = usedSickHrs + 1;
+                alert("Your full day sick request exceeds your allotment. Manager approval will be required.")
+              }
+            else {
+                usedSickHrs = usedSickHrs + .5;
+                alert("Your half day sick request exceeds your allotment. Manager approval will be required.")
+            }
+            
+        } else {
+            if (document.getElementById("txtFullDay").checked) {
+                usedPersonalHrs = usedPersonalHrs + 1;
+                alert("Your full day personal request exceeds your allotment. Manager approval will be required.")
+              }
+            else {
+                usedPersonalHrs = usedPersonalHrs + .5;
+                alert("Your half day personal request exceeds your allotment. Manager approval will be required.")
+            }
+            
+        }
+    }
+</script>
 </body>
 <hr>
   <br>

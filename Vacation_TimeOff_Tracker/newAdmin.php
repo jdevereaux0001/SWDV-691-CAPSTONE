@@ -2,7 +2,7 @@
 // database connection code
 // $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
 
-$con = mysqli_connect('localhost', 'root', '1Master01','VTT');
+$con = mysqli_connect('localhost:3306', 'root', '1Master01','VTT');
 
 // get the post records
 $txtAdminID = $_POST['txtAdminID'];

@@ -7,20 +7,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql1 = "SELECT * FROM student WHERE studentID = '624627'";
+$sql1 = "SELECT * FROM admin";
 
 	$result = mysqli_query($conn, $sql1);
     
     $details = mysqli_fetch_array($result);
 
-    $savedStudentID = $details["studentID"];
-    $savedFirstName = $details["firstName"];
-    $savedLastName = $details["lastName"];
-    $savedStartDate = $details["startDate"];
-    $savedEmail = $details["email"];
-    $savedVacationHrs = $details["vacationHrs"];
-    $savedSickHrs = $details["sickHrs"];
-    $savedPersonalHrs = $details["personalHrs"];
+    $savedAdminID = $details["adminID"];
 
 var_dump($details);
 
