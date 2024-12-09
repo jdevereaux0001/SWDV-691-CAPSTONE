@@ -10,8 +10,18 @@
         window.onload = function() {
             // Get the variable from session storage
             const txtFirstName = sessionStorage.getItem('txtFirstName');
+            const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
+            const txtDateApproved1 = sessionStorage.getItem('txtDateApproved1');
+            const txtDateApproved2 = sessionStorage.getItem('txtDateApproved2');
+            const txtDateApproved3 = sessionStorage.getItem('txtDateApproved3');
+
             // Display the variable value
             document.getElementById('txtFirstName').textContent = txtFirstName;
+            document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
+            document.getElementById('txtDateApproved1').textContent = txtDateApproved1;
+            document.getElementById('txtDateApproved2').textContent = txtDateApproved2;
+            document.getElementById('txtDateApproved3').textContent = txtDateApproved3;
+
 <!--            sessionStorage.clear();  -->
         };
         function blockSpecialChars(event)
@@ -28,7 +38,7 @@
 <body>
 <h1>Manager Account</h1>
 <section align="left">
-  <h4>Welcome <span id="txtFirstName"></span>!  Your Manager portal is below.</h4>
+  <h4>Welcome <span id="txtFirstName"></span>!  Your <span id="txtMaryvilleID"></span> Manager portal is below.</h4>
 
   <table align="center">
     <tr>
@@ -45,7 +55,7 @@
         <td>Full Day</td>
         <td>Vacation</td>
         <td>Traveling for Christmas</td>
-        <td><span id="txtDateApproved1"></span></td>
+        <td><span id="txtDateApproved1.value"></span></td>
     </tr>
     <tr>
         <td>0624627</td>
@@ -53,7 +63,7 @@
         <td>Half Day</td>
         <td>Sick</td>
         <td>Need the morning off</td>
-        <td><span id="txtDateApproved2"></span></td>
+        <td><span id="txtDateApproved2.value"></span></td>
   </tr>
   <tr>
         <td>0624627</td>
@@ -61,16 +71,33 @@
         <td>Full Day</td>
         <td>Personal</td>
         <td>Cannot tell you why</td>
-        <td><span id="txtDateApproved3"></span></td>
+        <td><span id="txtDateApproved3.value"></span></td>
 </tr>
 </table>
 <script type="text/javascript">
 
   function approve() {
-    document.getElementById("txtDateApproved1").valueAsDate = new Date();
-    document.getElementById("txtDateApproved2").valueAsDate = new Date();
-    document.getElementById("txtDateApproved3").valueAsDate = new Date();
-  }
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear();
+
+      if(dd<10) {
+          dd = '0'+dd
+      } 
+
+      if(mm<10) {
+          mm = '0'+mm
+      } 
+
+      today = yyyy + '/' + mm + '/' + dd;
+      console.log(today);
+      txtDateApproved1 = today;
+      txtDateApproved2 = today;
+      txtDateApproved3 = today;
+      sessionStorage.setItem('txtDateApproved1', txtDateApproved1.value, 'txtDateApproved2', txtDateApproved2.value, 'txtDateApproved3', txtDateApproved3.value);
+    }
+  
 </script>    
     <p>
         <input type="submit" class="button button1" name="Approve" id="Submit" onclick=approve() value="Approve All">

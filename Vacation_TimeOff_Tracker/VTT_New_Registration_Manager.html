@@ -66,7 +66,7 @@
             alert('Email is a required field.  Please enter.');
             return;
         }
-        sessionStorage.setItem('txtFirstName', txtFirstName.value);
+        sessionStorage.setItem('txtFirstName', txtFirstName.value, 'txtMaryvilleID', txtMaryvilleID.value);
 
         window.open("VTT_Manager_Account.html")
     }
