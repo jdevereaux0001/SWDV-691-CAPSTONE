@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="VTT.css"/>
     <script type="text/javascript" src="mustache.js"></script>
     <script type="text/javascript">
+        window.onload = function() {
+            // Get the variable from session storage
+            const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
+            // Display the variable value
+            document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
+            sessionStorage.clear();
+        };
         function blockSpecialChars(event)
         {
             if(!((event.keyCode >= 65) && (event.keyCode <= 90) || (event.keyCode >= 97) && (event.keyCode <= 122) || (event.keyCode >= 48) && (event.keyCode <= 57)))
@@ -21,36 +28,49 @@
 <h1>New Manager Registration</h1>
 <section align="left">
 <p align="left">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
-<form name="homeUser" method="post" action="createManager.php">
-    <body onload="renderHello()">
-        <div id="target">Loading...</div>
-        <script id="template" type="x-tmpl-mustache">
-          <h4>Oops! We didn't find {{ ID }}. Please register for first use:</h4>
-        </script>
+<!-- <form name="managerAccount" method="post" action="createManager.php"> -->
+<form name="managerAccount" method="post"></form>
     
-        <script src="https://unpkg.com/mustache@latest"></script>
-        <script src="render.js"></script>
-    </body>
+    <h4>Oops! We didn't find Manager account for ID# <span id="txtMaryvilleID"></span>. Please register for first use:</h4>
     <p>
-        <label for="firstName">First Name: </label>
+        <label for="txtFirstName">First Name: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtFirstName" id="txtFirstName" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
+        <input type="text" name="txtFirstName" id="txtFirstName" required value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
     </p>
     <p>
-        <label for="lastName">Last Name: </label>
+        <label for="txtLastName">Last Name: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtLastName" id="txtLastName" value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
+        <input type="text" name="txtLastName" id="txtLastName" required value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
     </p>
     <p>
-        <label for="Email">Email: </label>
+        <label for="txtEmail">Email: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtEmail" id="txtEmail" maxlength="40">
+        <input type="text" name="txtEmail" id="txtEmail" required maxlength="40">
     </p>
     <p>
-        <input type="submit" class="button button1" name="Register" id="Submit" value="Register">
+        <input type="submit" class="button button1" onclick=validate() name="Register" id="Submit" value="Register">
         <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
     </p>
 </form>
+<script type="text/javascript">
+    function validate() {
+        if (txtFirstName.value.trim() === '') {
+            alert('First Name is a required field.  Please enter.');
+            return;
+        }
+        if (txtLastName.value.trim() === '') {
+            alert('Last Name is a required field.  Please enter.');
+            return;
+        }
+        if (txtEmail.value.trim() === '') {
+            alert('Email is a required field.  Please enter.');
+            return;
+        }
+        sessionStorage.setItem('txtFirstName', txtFirstName.value);
+
+        window.open("VTT_Manager_Account.html")
+    }
+</script>
 </body>
 <hr>
   <br>

@@ -16,12 +16,12 @@
          <form name="StudentAccount" method="post" action="">
          <h4 role="heading" aria-level="4">Welcome! Please enter your Maryville University Student or Manager ID:</h4>
          <p>
-         <label for="MaryvilleID">Maryville University ID: </label>
+         <label for="txtMaryvilleID">Maryville University ID: </label>
          <strong><abbr title="required">*</abbr></strong>
-         <input type="number" title="txtMaryvilleID" name="txtMaryvilleID" id="txtMaryvilleID" value="" maxlength="7" onkeypress="return valid_numbers(event)">
+         <input type="number" required title="txtMaryvilleID" name="txtMaryvilleID" id="txtMaryvilleID" value="" maxlength="7" onkeypress="return valid_numbers(event)">
          <br>
          <br>
-         <label for="studentID">I am a Manager: </label>
+         <label for="txtIsManager">I am a Manager: </label>
          <input type="checkbox" title="txtIsManager" name="txtIsManager" id="txtIsManager" value="" onchange="doalert()">
         </p>
         <script type = "text/javascript">  
@@ -66,6 +66,11 @@
             }
             function validate()
             {
+              if (txtMaryvilleID.value.trim() === '') {
+                alert('Maryville University ID is a required field.  Please enter.');
+                return;
+}
+            sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
             if (txtIsManager.checked)  {
                 window.open("VTT_New_Registration_Manager.html")
             } else {
@@ -73,7 +78,7 @@
             } 
            }     
         </script>
-        <input type="AccessAccount" title="AccessAccount" class="button button1" onclick="validate()">Access Account</button>
+        <button id="AccessAccount" title="AccessAccount" class="button button1" onclick="validate()">Access Account</button>
 
         <br>
         <br>

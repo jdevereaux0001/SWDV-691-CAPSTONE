@@ -4,8 +4,15 @@
     <meta charset="utf-8">
     <title>New Registration</title>
     <link rel="stylesheet" href="VTT.css"/>
-    <script type="text/javascript" src="mustache.js"></script>
     <script type="text/javascript">
+        window.onload = function() {
+            // Get the variable from session storage
+            const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
+            // Display the variable value
+            document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
+            sessionStorage.clear();
+        };
+
         function blockSpecialChars(event)
         {
             if(!((event.keyCode >= 65) && (event.keyCode <= 90) || (event.keyCode >= 97) && (event.keyCode <= 122) || (event.keyCode >= 48) && (event.keyCode <= 57)))
@@ -15,48 +22,42 @@
             }
             event.returnValue = true;
         }
-    </script>
+</script>
+
 </head>
 <body>
 <h1 role="heading" aria-level="1">New Student Registration</h1>
 <section align="center">
 <p align="center">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
 <form name="StudentAccount" method="post" action="createStudent.php">
-    <body onload="renderHello()">
-        <div id="target">Loading...</div>
-        <script id="template" type="x-tmpl-mustache">
-          <h4>Oops! We didn't find {{ ID }}. Please register for first use:</h4>
-        </script>
     
-        <script src="https://unpkg.com/mustache@latest"></script>
-        <script src="render.js"></script>
-    </body>
+    <h4>Oops! We didn't find Maryville ID# <span id="txtMaryvilleID"></span>. Please register for first use:</h4>
     <p>
-        <label for="firstName">First Name: </label>
+        <label for="txtFirstName">First Name: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtFirstName" id="txtFirstName" value="" maxlength="20"  onkeypress="return blockSpecialChars(event)">
+        <input type="text" name="txtFirstName" required id="txtFirstName" required maxlength="20"  onkeypress="return blockSpecialChars(event)">
     </p>
     <p>
-        <label for="lastName">Last Name: </label>
+        <label for="txtLastName">Last Name: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="text" name="txtLastName" id="txtLastName" value="" maxlength="30"  onkeypress="return blockSpecialChars(event)">
+        <input type="text" name="txtLastName" id="txtLastName" required maxlength="30"  onkeypress="return blockSpecialChars(event)">
     </p>
     <p>
-        <label for="degreeName">Master's Degree Name: </label>
+        <label for="txtDegreeName">Master's Degree Name: </label>
         <input type="text" name="txtDegreeName" id="txtDegreeName" maxlength="40">
     </p>
     <p>
-        <label for="startDate">Degree Start Date: </label>
+        <label for="txtStartDate">Degree Start Date: </label>
         <strong><abbr title="required">*</abbr></strong>
-        <input type="date" name="txtstartDate" id="txtstartDate">
+        <input type="date" name="txtStartDate" id="txtStartDate" required>
     </p>
     <p>
-        <label for="gradDate">Anticipated Graduation Date: </label>
-        <input type="date" name="txtgradDate" id="txtgradDate">
+        <label for="txtGradDate">Anticipated Graduation Date: </label>
+        <input type="date" name="txtGradDate" id="txtGradDate">
     </p>
     <p>
-        <label for="profName">Professor's Name: </label>
-        <input type="text" name="txtprofName" id="txtprofName" maxlength="40">
+        <label for="txtProfName">Professor's Name: </label>
+        <input type="text" name="txtProfName" id="txtProfName" maxlength="40">
     </p>
     <h4 role="heading" aria-level="4">What are your interests:</h4>
     <form action="">
@@ -82,23 +83,46 @@
     <script type="text/javascript">
 
         function calcTimeoff() {
-            const date = txtstartDate;
-            const day = date.getDay();
-            const month = date.getMonth();
-            const year = date.getFullYear();
-            if (year < 2024) {
-                txtVacationHrs==20;
-                txtSickHrs==10;
-                txtPersonalHrs==5;
-            } else if (month < 7) {
-                txtVacationHrs==10;
-                txtSickHrs==5;
-                txtPersonalHrs==3;
-            } else {
-                txtVacationHrs==5;
-                txtSickHrs==3;
-                txtPersonalHrs==1;
+            if (txtStartDate.value.trim() === '') {
+                alert('Degree Start Date is required to calculate your timeoff awards.  Please enter.');
+                return;
             }
+            if (txtFirstName.value.trim() === '') {
+                alert('First Name is a required field.  Please enter.');
+                return;
+            }
+            if (txtLastName.value.trim() === '') {
+                alert('Last Name is a required field.  Please enter.');
+                return;
+            }
+            var date = new Date(txtStartDate.value);
+            console.log(date);
+            var day = date.getDay();
+            console.log(day);
+            var month = date.getMonth();
+            console.log(month);
+            var year = date.getFullYear();
+            console.log(year);
+            var txtVacationHrs=0;
+            var txtSickHrs=0;
+            var txtPersonalHrs=0;
+            if (year < 2024) {
+                txtVacationHrs=20;
+                txtSickHrs=10;
+                txtPersonalHrs=5;
+            } else if (month < 7) {
+                txtVacationHrs=10;
+                txtSickHrs=5;
+                txtPersonalHrs=3;
+            } else {
+                txtVacationHrs=5;
+                txtSickHrs=3;
+                txtPersonalHrs=1;
+            }
+            alert("Congrats!  Based upon your student tenure, your allocations are:  Vacation = " + txtVacationHrs + ", Sick = " + txtSickHrs + ", Personal = " + txtPersonalHrs)
+            
+            sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
+             
         }
                  
     </script>
@@ -106,7 +130,7 @@
         <input type="submit" class="button button1" onclick=calcTimeoff() name="Register" id="Submit" value="Register">
         <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
     </p>
-</form>
+</form> 
 </body>
 <hr>
   <br>

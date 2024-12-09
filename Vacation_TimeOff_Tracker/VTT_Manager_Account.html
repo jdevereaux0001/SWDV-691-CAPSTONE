@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manager Account</title>
     <link rel="stylesheet" href="VTT.css"/>
-    <script type="text/javascript" src="mustache.js"></script>
     <script type="text/javascript">
+        window.onload = function() {
+            // Get the variable from session storage
+            const txtFirstName = sessionStorage.getItem('txtFirstName');
+            // Display the variable value
+            document.getElementById('txtFirstName').textContent = txtFirstName;
+<!--            sessionStorage.clear();  -->
+        };
         function blockSpecialChars(event)
         {
             if(!((event.keyCode >= 65) && (event.keyCode <= 90) || (event.keyCode >= 97) && (event.keyCode <= 122) || (event.keyCode >= 48) && (event.keyCode <= 57)))
@@ -22,23 +28,48 @@
 <body>
 <h1>Manager Account</h1>
 <section align="left">
-    <body onload="renderHello()">
-        <div id="target">Loading...</div>
-        <script id="template" type="x-tmpl-mustache">
-          <h2>Welcome back, {{ name }}. </h2>
-          <h4>Your timeoff requests requiring approval are below. </h4>
-        </script>
-        <script src="https://unpkg.com/mustache@latest"></script>
-        <script src="render.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+  <h4>Welcome <span id="txtFirstName"></span>!  Your Manager portal is below.</h4>
 
+  <table align="center">
+    <tr>
+        <th>Student ID</th>
+        <th>Timeoff Date</th>
+        <th>Duration</th>
+        <th>Reason Code</th>
+        <th>Comments</th>
+        <th>Date Approved</th>
+    </tr>
+    <tr>
+        <td>0624627</td>
+        <td>12/10/2024</td>
+        <td>Full Day</td>
+        <td>Vacation</td>
+        <td>Traveling for Christmas</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>0624627</td>
+        <td>12/11/2024</td>
+        <td>Half Day</td>
+        <td>Sick</td>
+        <td>Need the morning off</td>
+        <td></td>
+  </tr>
+  <tr>
+        <td>0624627</td>
+        <td>12/10/2024</td>
+        <td>Full Day</td>
+        <td>Personal</td>
+        <td>Cannot tell you why</td>
+        <td></td>
+</tr>
+</table>
 
 <form name="managerUser" method="post" action="">
     
     
     <p>
-        <input type="submit" class="button button1" name="Register" id="Submit" value="Register">
-        <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
+        <input type="submit" class="button button1" name="Approve" id="Submit" value="Approve All">
     </p>
 </form>
 </body>
