@@ -45,7 +45,7 @@
         <td>Full Day</td>
         <td>Vacation</td>
         <td>Traveling for Christmas</td>
-        <td></td>
+        <td><span id="txtDateApproved1"></span></td>
     </tr>
     <tr>
         <td>0624627</td>
@@ -53,7 +53,7 @@
         <td>Half Day</td>
         <td>Sick</td>
         <td>Need the morning off</td>
-        <td></td>
+        <td><span id="txtDateApproved2"></span></td>
   </tr>
   <tr>
         <td>0624627</td>
@@ -61,17 +61,22 @@
         <td>Full Day</td>
         <td>Personal</td>
         <td>Cannot tell you why</td>
-        <td></td>
+        <td><span id="txtDateApproved3"></span></td>
 </tr>
 </table>
+<script type="text/javascript">
 
-<form name="managerUser" method="post" action="">
-    
-    
+  function approve() {
+    document.getElementById("txtDateApproved1").valueAsDate = new Date();
+    document.getElementById("txtDateApproved2").valueAsDate = new Date();
+    document.getElementById("txtDateApproved3").valueAsDate = new Date();
+  }
+</script>    
     <p>
-        <input type="submit" class="button button1" name="Approve" id="Submit" value="Approve All">
+        <input type="submit" class="button button1" name="Approve" id="Submit" onclick=approve() value="Approve All">
     </p>
 </form>
+
 </body>
 <hr>
   <br>
