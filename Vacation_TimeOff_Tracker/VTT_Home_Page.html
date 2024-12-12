@@ -20,7 +20,7 @@
          <p>
          <label for="txtMaryvilleID">Maryville University ID: </label>
          <strong><abbr title="required">*</abbr></strong>
-         <input type="number" required title="txtMaryvilleID" name="txtMaryvilleID" id="txtMaryvilleID" value="" maxlength="7" onkeypress="return valid_numbers(event)">
+         <input type="number" required title="txtMaryvilleID" name="txtMaryvilleID" id="txtMaryvilleID" value="" maxlength="7" >
          <br>
          <br>
          <label for="txtIsManager">I am a Manager: </label>
@@ -36,7 +36,6 @@
             
             function validate()
             {
-              alert("<?php echo 'HOWDY!';>")
               if (txtMaryvilleID.value.trim() === '') {
                 alert('Maryville University ID is a required field.  Please enter.');
                 return;
