@@ -6,8 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Account</title>
     <link rel="stylesheet" href="VTT.css"/>
-    <script type="text/javascript" src="mustache.js"></script>
     <script type="text/javascript">
+        window.onload = function() {
+            // Get the variable from session storage
+            const txtFirstName = sessionStorage.getItem('txtFirstName');
+            const txtStartDate = sessionStorage.getItem('txtStartDate');
+            const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
+            // Display the variable value
+            document.getElementById('txtFirstName').textContent = txtFirstName;
+            document.getElementById('txtStartDate').textContent = txtStartDate;
+            document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
+        };
         function blockSpecialChars(event)
         {
             if(!((event.keyCode >= 65) && (event.keyCode <= 90) || (event.keyCode >= 97) && (event.keyCode <= 122) || (event.keyCode >= 48) && (event.keyCode <= 57)))
@@ -22,16 +31,9 @@
 <body>
 <h1>Student Account</h1>
 <section align="center">
-    <body onload="renderHello()">
-        <div id="target">Loading...</div>
-        <script id="template" type="x-tmpl-mustache">
-          <h2>Hello {{ name }}, welcome to the Vacation & TimeOff Tracker!</h2>
-          <h4>Congrats on being a student of Maryville University since {{ year }}.</h4>
-        </script>
-    
-        <script src="https://unpkg.com/mustache@latest"></script>
-        <script src="render.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+
+          <h2>Hello <span id="txtFirstName"></span>, welcome to the Vacation & TimeOff Tracker!</h2>
+          <h4>Congrats on being a student of Maryville University since <span id="txtStartDate"></span>.</h4>
     </body>
 <hr>
 </head>
@@ -56,13 +58,12 @@
 <br>        
 <hr>
 <script type = "text/javascript">  
-    
+      sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
+      window.open("VTT_Submit_Timeoff.html")
 </script>
-
-
     <p>&nbsp;</p>
     <p align="left">
-        <a href="VTT_Submit_Timeoff.html" role="button"><button class="button button1">Submit TimeOff</button></a>
+        <a href="VTT_Submit_Timeoff.html"><button type="button" class="button button1">Submit TimeOff</button></a>
     </p>
 </form>
 </body>

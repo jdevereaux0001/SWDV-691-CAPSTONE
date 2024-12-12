@@ -2,6 +2,8 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Registration</title>
     <link rel="stylesheet" href="VTT.css"/>
     <script type="text/javascript">
@@ -10,7 +12,6 @@
             const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
             // Display the variable value
             document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
-            sessionStorage.clear();
         };
 
         function blockSpecialChars(event)
@@ -61,24 +62,24 @@
     </p>
     <h4 role="heading" aria-level="4">What are your interests:</h4>
     <form action="">
-        <input type="checkbox" id="txtIntTravel" name="txtIntTravel" value="intTravel">
-        <label for="intTravel">International Travel</label><br>
-        <input type="checkbox" id="txtDomTravel" name="txtDomTravel" value="domTravel">
-        <label for="domTravel">Domestic Travel</label><br>
-        <input type="checkbox" id="txtResorts" name="txtResorts" value="resorts">
-        <label for="resorts">Resorts</label><br>
-        <input type="checkbox" id="txtBeach" name="txtBeach" value="beach">
-        <label for="beach">Beach</label><br>
-        <input type="checkbox" id="txtGaming" name="txtGaming" value="gaming">
-        <label for="gaming">Gaming</label><br>
-        <input type="checkbox" id="txtReading" name="txtReading" value="reading">
-        <label for="reading">Reading</label><br>
-        <input type="checkbox" id="txtRoughingIt" name="txtRoughingIt" value="roughingIt">
-        <label for="roughingIt">Roughing It</label><br>
-        <input type="checkbox" id="txtFishing" name="txtFishing" value="fishing">
-        <label for="fishing">Fishing</label><br>
-        <input type="checkbox" id="txtOptIn" name="txtOptIn" value="NA">
-        <label for="OptIn">N/A; opt out</label>
+        <input type="checkbox" id="txtIntTravel" name="txtIntTravel" value="txtintTravel">
+        <label for="txtIntTravel">International Travel</label><br>
+        <input type="checkbox" id="txtDomTravel" name="txtDomTravel" value="txtdomTravel">
+        <label for="txtDomTravel">Domestic Travel</label><br>
+        <input type="checkbox" id="txtResorts" name="txtResorts" value="txtResorts">
+        <label for="txtResorts">Resorts</label><br>
+        <input type="checkbox" id="txtBeach" name="txtBeach" value="txtBeach">
+        <label for="txtBeach">Beach</label><br>
+        <input type="checkbox" id="txtGaming" name="txtGaming" value="txtGaming">
+        <label for="txtGaming">Gaming</label><br>
+        <input type="checkbox" id="txtReading" name="txtReading" value="txtReading">
+        <label for="txtReading">Reading</label><br>
+        <input type="checkbox" id="txtRoughingIt" name="txtRoughingIt" value="txtRoughingIt">
+        <label for="txtRoughingIt">Roughing It</label><br>
+        <input type="checkbox" id="txtFishing" name="txtFishing" value="txtFishing">
+        <label for="txtFishing">Fishing</label><br>
+        <input type="checkbox" id="txtOptIn" name="txtOptIn" value="txtOptIn">
+        <label for="txtOptIn">N/A; opt out</label>        
     </form>
     <script type="text/javascript">
 
@@ -95,6 +96,11 @@
                 alert('Last Name is a required field.  Please enter.');
                 return;
             }
+
+            sessionStorage.setItem('txtFirstName', txtFirstName.value);
+            sessionStorage.setItem('txtStartDate', txtStartDate.value);
+            sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
+
             var date = new Date(txtStartDate.value);
             console.log(date);
             var day = date.getDay();
@@ -120,8 +126,6 @@
                 txtPersonalHrs=1;
             }
             alert("Congrats!  Based upon your student tenure, your allocations are:  Vacation = " + txtVacationHrs + ", Sick = " + txtSickHrs + ", Personal = " + txtPersonalHrs)
-            
-            sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
              
         }
                  

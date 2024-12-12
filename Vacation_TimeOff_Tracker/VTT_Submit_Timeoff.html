@@ -4,6 +4,13 @@
     <meta charset="utf-8">
     <title>Submit TimeOff</title>
     <link rel="stylesheet" href="VTT.css"/>
+    <script type="text/javascript">
+        window.onload = function() {
+            // Get the variable from session storage
+            const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
+            // Display the variable value
+            document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
+        };
     </script>
 </head>
 <body>
