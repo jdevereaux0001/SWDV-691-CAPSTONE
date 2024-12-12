@@ -1,21 +1,25 @@
 <?php
-// database connection code
-// $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
+$servername = "localhost";
+$username = "root";
+$password = "1Master01";
+$dbname = "vtt";
 
-$con = mysqli_connect('localhost:3306', 'root', '1Master01','VTT');
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-// get the post records
-$txtAdminID = $_POST['txtAdminID'];
-
-// database insert SQL code
-$sql = "INSERT INTO 'admin' ('adminID') VALUES ('$txtAdminID')";
-
-// insert in database 
-$rs = mysqli_query($con, $sql);
-
-if($rs)
-{
-	echo "Admin record successfully inserted";
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
+// SQL query to insert data
+$sql = "INSERT INTO admin (adminID) VALUES ('$txtAdminID')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Admin record created successfully";
+} else {
+    echo "Admin record failed with error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
 ?>
