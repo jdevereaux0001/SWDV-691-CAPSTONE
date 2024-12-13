@@ -11,18 +11,10 @@
             // Get the variable from session storage
             const txtFirstName = sessionStorage.getItem('txtFirstName');
             const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
-            const txtDateApproved1 = sessionStorage.getItem('txtDateApproved1');
-            const txtDateApproved2 = sessionStorage.getItem('txtDateApproved2');
-            const txtDateApproved3 = sessionStorage.getItem('txtDateApproved3');
 
             // Display the variable value
             document.getElementById('txtFirstName').textContent = txtFirstName;
             document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
-            document.getElementById('txtDateApproved1').textContent = txtDateApproved1;
-            document.getElementById('txtDateApproved2').textContent = txtDateApproved2;
-            document.getElementById('txtDateApproved3').textContent = txtDateApproved3;
-
-<!--            sessionStorage.clear();  -->
         };
         function blockSpecialChars(event)
         {
@@ -95,7 +87,9 @@
       txtDateApproved1 = today;
       txtDateApproved2 = today;
       txtDateApproved3 = today;
-      sessionStorage.setItem('txtDateApproved1', txtDateApproved1.value, 'txtDateApproved2', txtDateApproved2.value, 'txtDateApproved3', txtDateApproved3.value);
+      sessionStorage.setItem('txtDateApproved1', txtDateApproved1.value);
+      sessionStorage.setItem('txtDateApproved2', txtDateApproved2.value);
+      sessionStorage.setItem('txtDateApproved3', txtDateApproved3.value);
     }
   
 </script>    

@@ -2,6 +2,8 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> New Manager Registration</title>
     <link rel="stylesheet" href="VTT.css"/>
     <script type="text/javascript" src="mustache.js"></script>
@@ -11,7 +13,6 @@
             const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
             // Display the variable value
             document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
-            sessionStorage.clear();
         };
         function blockSpecialChars(event)
         {
@@ -66,7 +67,8 @@
             alert('Email is a required field.  Please enter.');
             return;
         }
-        sessionStorage.setItem('txtFirstName', txtFirstName.value, 'txtMaryvilleID', txtMaryvilleID.value);
+        sessionStorage.setItem('txtFirstName', txtFirstName.value);
+        sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
 
         window.open("VTT_Manager_Account.html")
     }
