@@ -1,26 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vacation & TimeOff Tracker</title>
+    <link rel="stylesheet" href="VTT.css"/>
+  </head>
+  <body>
+    <header>
+      <h1 role="heading" aria-level="1">Vacation & TimeOff Tracker
+      <img title="beach" src="beach1.png"></h1>
+    </header>
+    <main>
+    <body align="center">
+        <section align="center">
+         <form name="StudentAccount" method="post" action="">
+         <h4 role="heading" aria-level="4">Welcome! Please enter your Maryville University Student or Manager ID:</h4>
+         <p>
+         <label for="txtMaryvilleID">Maryville University ID: </label>
+         <strong><abbr title="required">*</abbr></strong>
+         <input type="number" required title="txtMaryvilleID" name="txtMaryvilleID" id="txtMaryvilleID" value="" maxlength="7" >
+         <br>
+         <br>
+         <label for="txtIsManager">I am a Manager: </label>
+         <input type="checkbox" title="txtIsManager" name="txtIsManager" id="txtIsManager" value="" onchange="doalert()">
+        </p>
+        <script type = "text/javascript">  
+            function doalert()
+            {
+              if (txtIsManager.checked) {
+                  alert ("Manager box is checked!  Please uncheck if this is not intended.");
+              }
+            }
+            
+            function validate()
+            {
+              if (txtMaryvilleID.value.trim() === '') {
+                alert('Maryville University ID is a required field.  Please enter.');
+                return;
+}
+            sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
+            if (txtIsManager.checked)  {
+                window.open("VTT_New_Registration_Manager.html")
+            } else {
+                window.open("VTT_New_Registration_Student.html")
+            } 
+           }     
+        </script>
+        <button type="button" id="AccessAccount" title="AccessAccount" class="button button1" onclick="validate()">Access Account</button>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Vacation & Time Tracker</title>
-
-  <base href="/" />
-
-  <meta name="color-scheme" content="light dark" />
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
-
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
-
-  <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-</head>
-
-<body>
-  <app-root></app-root>
-</body>
+        <br>
+        <br>
+        <br>
+        <br>
+    </body>
+    <br>
+  </main>
+</html>
 
 </html>
