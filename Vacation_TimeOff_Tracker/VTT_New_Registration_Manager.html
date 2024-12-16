@@ -14,6 +14,7 @@
             // Display the variable value
             document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
         };
+
         function blockSpecialChars(event)
         {
             if(!((event.keyCode >= 65) && (event.keyCode <= 90) || (event.keyCode >= 97) && (event.keyCode <= 122) || (event.keyCode >= 48) && (event.keyCode <= 57)))
@@ -22,6 +23,30 @@
                 return;
             }
             event.returnValue = true;
+        }
+
+        function validate() {
+        if (txtFirstName.value.trim() === '') {
+            alert('First Name is a required field.  Please enter.');
+            return;
+        }
+        if (txtLastName.value.trim() === '') {
+            alert('Last Name is a required field.  Please enter.');
+            return;
+        }
+        if (txtEmail.value.trim() === '') {
+            alert('Email is a required field.  Please enter.');
+            return;
+        }
+        sessionStorage.setItem('txtFirstName', txtFirstName.value);
+        sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
+
+        alert("Congratulations on your registration!  Proceeding to your Manager portal.")
+        
+        }
+        function navigate() {
+            validate()
+            window.open("VTT_Manager_Account.html")
         }
     </script>
 </head>
@@ -49,30 +74,10 @@
         <input type="text" name="txtEmail" id="txtEmail" required maxlength="40">
     </p>
     <p>
-        <input type="submit" class="button button1" onclick=validate() name="Register" id="Submit" value="Register">
+        <input type="submit" class="button button1" onclick=navigate() name="Register" id="Submit" value="Register">
         <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
     </p>
 </form>
-<script type="text/javascript">
-    function validate() {
-        if (txtFirstName.value.trim() === '') {
-            alert('First Name is a required field.  Please enter.');
-            return;
-        }
-        if (txtLastName.value.trim() === '') {
-            alert('Last Name is a required field.  Please enter.');
-            return;
-        }
-        if (txtEmail.value.trim() === '') {
-            alert('Email is a required field.  Please enter.');
-            return;
-        }
-        sessionStorage.setItem('txtFirstName', txtFirstName.value);
-        sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
-
-        window.open("VTT_Manager_Account.html")
-    }
-</script>
 </body>
 <hr>
   <br>

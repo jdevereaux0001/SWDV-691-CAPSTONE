@@ -30,8 +30,8 @@
 <h1 role="heading" aria-level="1">New Student Registration</h1>
 <section align="center">
 <p align="center">(Required fields are noted with <strong><abbr title="required">*</abbr></strong>)</p>
-<form name="StudentAccount" method="post" action="createStudent.php">
-    
+<form name="StudentAccount" method="post" action="PHP/createStudent.php">
+
     <h4>Oops! We didn't find Maryville ID# <span id="txtMaryvilleID"></span>. Please register for first use:</h4>
     <p>
         <label for="txtFirstName">First Name: </label>
@@ -125,15 +125,26 @@
                 txtSickHrs=3;
                 txtPersonalHrs=1;
             }
-            alert("Congrats!  Based upon your student tenure, your allocations are:  Vacation = " + txtVacationHrs + ", Sick = " + txtSickHrs + ", Personal = " + txtPersonalHrs)
-             
+
+            sessionStorage.setItem('txtVacationHrs', txtVacationHrs.value);
+            sessionStorage.setItem('txtSickHrs', txtSickHrs.value);
+            sessionStorage.setItem('txtPersonalHrs', txtPersonalHrs.value);
+
+            alert("Congrats!  Based upon your student tenure, your allocations are:  Vacation = " + txtVacationHrs + ", Sick = " + txtSickHrs + ", Personal = " + txtPersonalHrs + ".  Proceeding to your Student Account.")
         }
+
+        function navigate() {
+            calcTimeoff()
+            window.open("VTT_Student_Account.html")
+        }
+        
                  
     </script>
     <p>
-        <input type="submit" class="button button1" onclick=calcTimeoff() name="Register" id="Submit" value="Register">
+        <input type="submit" class="button button1" onclick=navigate() name="Register" id="Submit" value="Register">
         <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
     </p>
+    
 </form> 
 </body>
 <hr>

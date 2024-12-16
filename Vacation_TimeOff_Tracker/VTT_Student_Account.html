@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Account</title>
     <link rel="stylesheet" href="VTT.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script type="text/javascript">
         window.onload = function() {
             // Get the variable from session storage
             const txtFirstName = sessionStorage.getItem('txtFirstName');
             const txtStartDate = sessionStorage.getItem('txtStartDate');
-            const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
+
+
             // Display the variable value
             document.getElementById('txtFirstName').textContent = txtFirstName;
             document.getElementById('txtStartDate').textContent = txtStartDate;
-            document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
+
+
+
         };
         function blockSpecialChars(event)
         {
@@ -26,19 +31,17 @@
             }
             event.returnValue = true;
         }
+        
     </script>
+    
 </head>
 <body>
 <h1>Student Account</h1>
 <section align="center">
-
-          <h2>Hello <span id="txtFirstName"></span>, welcome to the Vacation & TimeOff Tracker!</h2>
-          <h4>Congrats on being a student of Maryville University since <span id="txtStartDate"></span>.</h4>
-    </body>
+    <h2>Hello <span id="txtFirstName"></span>, welcome to the Vacation & TimeOff Tracker!</h2>
+    <h4>Congrats on being a student of Maryville University since <span id="txtStartDate"></span>.</h4>
+</body>
 <hr>
-</head>
-<head>
-    
 </head>
 
 <div class="row">
@@ -57,10 +60,6 @@
 </div>
 <br>        
 <hr>
-<script type = "text/javascript">  
-      sessionStorage.setItem('txtMaryvilleID', txtMaryvilleID.value);
-      window.open("VTT_Submit_Timeoff.html")
-</script>
     <p>&nbsp;</p>
     <p align="left">
         <a href="VTT_Submit_Timeoff.html"><button type="button" class="button button1">Submit TimeOff</button></a>

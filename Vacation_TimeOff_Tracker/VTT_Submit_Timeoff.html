@@ -7,12 +7,7 @@
     <title>Submit TimeOff</title>
     <link rel="stylesheet" href="VTT.css"/>
     <script type="text/javascript">
-        window.onload = function() {
-            // Get the variable from session storage
-            const txtMaryvilleID = sessionStorage.getItem('txtMaryvilleID');
-            // Display the variable value
-            document.getElementById('txtMaryvilleID').textContent = txtMaryvilleID;
-        };
+        
     </script>
 </head>
 <body>
@@ -54,7 +49,7 @@
         </textarea>
     </p>
     <p>
-        <button type="submit" class="button button1" onclick="verifyBals()">Submit</button>
+        <button type="submit" class="button button1" onclick="navigate()">Submit</button>
         <input type="reset" class="button button1" name="ClearForm" id="ClearForm" value="Clear Form">
     </p>
 </form>
@@ -97,6 +92,10 @@
             }
             
         }
+    }
+    function navigate() {
+        verifyBals()
+        window.open("VTT_Student_Account.html")
     }
 </script>
 </body>

@@ -272,5 +272,10 @@ body {
 	background-image: conic-gradient(rgb(240, 215, 77) 50%, rgb(36, 153, 207) 50%);
 	border-radius: 50%
   }
-
+canvas {
+	max-width: 250px;
+	max-height: 250px;
+	width: 100%;
+	height: auto;
+}
 }
